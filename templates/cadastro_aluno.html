@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulário de Cadastro</title>
+</head>
+<body>
+    <h2>Formulário de Cadastro</h2>
+    <form action="{{ url_for('routes.cadastro_aluno') }}" method="POST">
+        <label for="nome">Nome do Aluno:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+        
+        <label for="data_nascimento">Data de Nascimento:</label>
+        <input type="date" id="data_nascimento" name="data_nascimento" required><br><br>
+        
+        <label for="sexo">Sexo:</label>
+        <select id="sexo" name="sexo">
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+            <option value="outro">Outro</option>
+        </select><br><br>
+        
+        <label for="cor_raca">Autodeclaração de Cor/Raça:</label>
+        <select id="cor_raca" name="cor_raca">
+            <option value="branca">Branca</option>
+            <option value="negra">Negra</option>
+            <option value="amarela">Amarela</option>
+            <option value="indigena">Indígena</option>
+            <option value="outra">Outra</option>
+        </select><br><br>
+        
+        <label for="moradia">Com quem o estudante mora:</label>
+        <select id="moradia" name="moradia">
+            <option value="pai">Pai</option>
+            <option value="mae">Mãe</option>
+            <option value="outro">Outro</option>
+        </select><br><br>
+        
+        <div id="outro_moradia" style="display: none;">
+            <label for="especificar_moradia">Especificar:</label>
+            <input type="text" id="especificar_moradia" name="especificar_moradia">
+        </div><br><br>
+        
+        <input type="submit" value="Enviar">
+    </form>
+    
+    <script>
+        // Mostrar ou ocultar o campo de especificar moradia dependendo da opção selecionada
+        var moradiaSelect = document.getElementById('moradia');
+        var outroMoradiaDiv = document.getElementById('outro_moradia');
+        
+        moradiaSelect.addEventListener('change', function() {
+            if (moradiaSelect.value === 'outro') {
+                outroMoradiaDiv.style.display = 'block';
+            } else {
+                outroMoradiaDiv.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

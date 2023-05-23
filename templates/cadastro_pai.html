@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Identificação do Pai</title>
+</head>
+
+<body>
+    <h1>Identificação do Pai</h1>
+
+    <label for="situacao-pai">Situação do pai:</label>
+    <select id="situacao-pai" name="situacao-pai">
+        <option value="presente">Presente</option>
+        <option value="falecido">Falecido</option>
+        <option value="separado">Separado</option>
+        <option value="outro">Outro</option>
+    </select>
+
+    <div id="pai-presente" style="display: none;">
+        <h2>Dados do pai presente</h2>
+
+        <label for="nome-pai">Nome completo:</label>
+        <input type="text" id="nome-pai" name="nome-pai"><br>
+
+        <label for="data-nascimento-pai">Data de nascimento:</label>
+        <input type="date" id="data-nascimento-pai" name="data-nascimento-pai"><br>
+
+        <label for="rg-pai">RG:</label>
+        <input type="text" id="rg-pai" name="rg-pai"><br>
+
+        <label for="escolaridade-pai">Escolaridade:</label>
+        <input type="text" id="escolaridade-pai" name="escolaridade-pai"><br>
+
+        <label for="estado-civil-pai">Estado civil:</label>
+        <input type="text" id="estado-civil-pai" name="estado-civil-pai"><br>
+
+        <label for="email-pai">E-mail:</label>
+        <input type="email" id="email-pai" name="email-pai"><br>
+
+        <label for="facebook-pai">Facebook:</label>
+        <input type="text" id="facebook-pai" name="facebook-pai"><br>
+
+        <label for="orgao-emissor-pai">Órgão emissor/SSP:</label>
+        <input type="text" id="orgao-emissor-pai" name="orgao-emissor-pai"><br>
+
+        <label for="profissao-pai">Profissão:</label>
+        <input type="text" id="profissao-pai" name="profissao-pai"><br>
+
+        <label for="telefone-pai">Telefone fixo ou celular:</label>
+        <input type="text" id="telefone-pai" name="telefone-pai"><br>
+
+        <label for="nis-pai">Número NIS:</label>
+        <input type="text" id="nis-pai" name="nis-pai"><br>
+
+        <label for="situacao-trabalho-pai">Situação de trabalho atual:</label>
+        <input type="text" id="situacao-trabalho-pai" name="situacao-trabalho-pai"><br>
+
+        <label for="tempo-desempregado-pai">Tempo de desemprego:</label>
+        <input type="text" id="tempo-desempregado-pai" name="tempo-desempregado-pai"><br>
+    </div>
+
+    <script>
+        document.getElementById('situacao-pai').addEventListener('change', function () {
+            var presenteDiv = document.getElementById('pai-presente');
+            if (this.value === 'presente') {
+                presenteDiv.style.display = 'block';
+            } else {
+                presenteDiv.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
